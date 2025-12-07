@@ -1,13 +1,13 @@
 class Solution {
     public int longestConsecutive(int[] nums) {
-        HashMap <Integer,Integer> mp = new HashMap<>();
-        int res=0;
+        HashMap<Integer,Integer> samyash = new HashMap<>();
+        int res = 0;
         for(int num : nums){
-            if(!mp.containsKey(num)){
-                mp.put(num,mp.getOrDefault(num-1,0)+mp.getOrDefault(num+1,0)+1);
-                mp.put(num-mp.getOrDefault(num-1,0),mp.get(num));
-                mp.put(num+mp.getOrDefault(num+1,0),mp.get(num));
-                res=Math.max(res,mp.get(num));
+            if(!samyash.containsKey(num)){
+                samyash.put(num,samyash.getOrDefault(num-1,0)+samyash.getOrDefault(num+1,0)+1);
+                samyash.put(num-samyash.getOrDefault(num-1,0),samyash.get(num));
+                samyash.put(num+samyash.getOrDefault(num+1,0),samyash.get(num));
+                res = Math.max(res,samyash.get(num));
             }
         }
         return res;
