@@ -4,17 +4,17 @@ class Solution {
             return 0;
         }
         int l = 0, r = height.length-1;
-        int lMax = height[l] , rMax = height[r];
+        int lmax = height[l] , rmax = height[r];
         int res = 0;
         while(l < r){
-            if(lMax < rMax){
+            if(height[l] < height[r]){
                 l++;
-                lMax = Math.max(lMax , height[l]);
-                res += lMax - height[l];
+                lmax = Math.max(lmax,height[l]);
+                res += lmax - height[l];
             }else{
                 r--;
-                rMax = Math.max(rMax , height[r]);
-                res += rMax - height[r];
+                rmax = Math.max(rmax,height[r]);
+                res += rmax - height[r];
             }
         }
         return res;
