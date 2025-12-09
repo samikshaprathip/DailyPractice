@@ -15,7 +15,7 @@ class Solution {
                 matches++;
             }
         }
-        int l=0;
+        int l = 0;
         for(int r=s1.length();r<s2.length();r++){
             if(matches == 26){
                 return true;
@@ -29,13 +29,13 @@ class Solution {
             }
             index = s2.charAt(l)-'a';
             s2c[index]--;
-            if(s1c[index] == s2c[index]){
+            if(s1c[index]==s2c[index]){
                 matches++;
             }else if(s1c[index]-1 == s2c[index]){
-            matches--;
+                matches--;
+            }
+            l++;
         }
-        l++;
+        return matches == 26;
     }
-    return matches == 26;
-}
 }
