@@ -3,8 +3,8 @@ class Solution {
         int maxP = 0;
         int minBuy = prices[0];
         for(int sell : prices){
-            minBuy = Math.min(minBuy,sell);
             maxP = Math.max(maxP,sell-minBuy);
+            minBuy = Math.min(minBuy,sell);
         }
         return maxP;
     }
