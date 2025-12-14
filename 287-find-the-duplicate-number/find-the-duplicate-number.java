@@ -1,11 +1,11 @@
-public class Solution {
+class Solution {
     public int findDuplicate(int[] nums) {
-        int[] seen = new int[nums.length];
-        for (int num : nums) {
-            if (seen[num - 1] == 1) {
-                return num;
+        HashSet<Integer> seen = new HashSet<>();
+        for(int i=0;i<nums.length;i++){
+            if(seen.contains(nums[i])){
+                return nums[i];
             }
-            seen[num - 1] = 1;
+            seen.add(nums[i]);
         }
         return -1;
     }
