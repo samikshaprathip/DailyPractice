@@ -2,9 +2,9 @@ class Solution {
     public int maxProfit(int[] prices) {
         int maxProfit = 0;
         int minBuy = prices[0];
-        for(int sell : prices){
-            minBuy = Math.min(sell,minBuy);
-            maxProfit = Math.max(maxProfit,sell-minBuy);
+        for(int i=0;i<prices.length;i++){
+            minBuy=Math.min(minBuy,prices[i]);
+            maxProfit=Math.max(maxProfit,prices[i]-minBuy);
         }
         return maxProfit;
     }
