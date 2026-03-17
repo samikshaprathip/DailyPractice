@@ -3,9 +3,9 @@ class Solution {
         int l=0,r=numbers.length-1;
         while(l<=r){
             int currSum=numbers[l]+numbers[r];
-            if(currSum < target){
+            if(currSum<target){
                 l++;
-            }else if(currSum > target){
+            }else if(currSum>target){
                 r--;
             }else{
                 return new int[]{l+1,r+1};
