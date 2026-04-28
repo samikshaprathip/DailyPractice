@@ -10,24 +10,24 @@
  */
 class Solution {
     public void reorderList(ListNode head) {
-        head = rec(head,head.next);
+        head =  rec(head,head.next);
     }
-    private ListNode rec(ListNode root, ListNode cur){
-        if(cur == null){
+    private ListNode rec(ListNode root,ListNode curr){
+        if(curr == null){
             return root;
         }
-        root = rec(root, cur.next);
-        if(root == null){
-            return null;
-        }
-        ListNode tmp = null;
-        if(root == cur || root.next == cur){
-            cur.next = null;
-        }else{
-            tmp = root.next;
-            root.next = cur;
-            cur.next = tmp;
-        }
-        return tmp;
+        root = rec(root,curr.next);
+            if(root == null){
+                return null;
+            }
+            ListNode temp = null;
+            if(root == curr || root.next == curr){
+                curr.next = null;
+            }else{
+                temp = root.next;
+                root.next=curr;
+                curr.next=temp;
+            }
+            return temp;
     }
 }
